@@ -1,0 +1,11 @@
+
+<form action="/LeaveMessage" class="hidden" method="POST" >
+    {% csrf_token %}
+    {% for field in form %}
+    {{field.label_tag}}
+    {{field}}
+    {{field.errors}}
+    {% endfor %}
+    <button id="form-submit" type="submit" class="btn-secondary">Submit
+    </button>
+</form>

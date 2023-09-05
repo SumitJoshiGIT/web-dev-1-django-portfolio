@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{%block main_content %}
+{%load static%}
+{%load extras%}
+<link rel="stylesheet" href="{%static 'css/home.css'%}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+
+        <div class="theme-one" data-src="{% static 'assets\img\backgrounds\bck1.png' %}" style="background-image:url({% static 'assets\img\backgrounds\bck1.png' %})">
+          <div class="bold-heading " style="max-width:400px;">
+            Enriching User <br><span class="slide-out">Experience</span> 
+            <br>and Interface</div>
+          <br>
+          <hr>
+        
+        </div>     
+    
+    <div class="myinfo-box  theme-common pop-translate " style=" width:fit-content;display:flex;padding-right: clamp(20px,20vw,60px);;">
+      <div  style="display:flex;flex-direction: column;">
+       <img class="myimg" width=20px; height=20px src="../static/assets/img/myimg.jpg">
+       </img>
+       <div  style="padding-left:4px;width:inherit;justify-content:'space-between'">
+       <button class="btn-secondary" style="background-color:#47A992">Hire me</button>
+       <button class="btn-secondary">Resume</button>
+       </div>
+      </div> 
+      
+      <div> 
+       
+      <div class="slide-out" style="max-width:370px">
+        <span style="color:#0C134F;font-size:clamp(60%,10vw,4em);" class="bold-heading ">Hello,<br>
+          <span style="font-size:clamp(27px,3vw,30px);color:white;">I am Sumit Joshi.</span>
+      </span></div>
+       
+       <p style="min-width:200px;width:30vw;max-width:370px;">
+        I am a tech enthusiast and a student,<br>professionally working as a full stack web developer for the time being.<br>
+        I specialize in producing web applications and user experiences over the Internet and
+        I take great joy in producing creative work .<br><br>
+        My goal is simple that is to provide the best work to my clients at a reasonable expense.
+       </p>
+</div>
+      </div> 
+            
+    
+
+   <div aria-label="container" style="display:flex;justify-content:flex-end;height:fit-content;width:100vw;">
+    <div class="myinfo-box theme-common pop-translate" style="width:fit-content; ">
+      <div class="slide-out" style="flex-wrap:wrap;"
+      >
+        <span style="color:#0C134F;font-size:clamp(32px,5vw,4em);" class="bold-heading ">Programming<br>Languages?
+      </span></div>
+       
+      <div class="card-container"style="min-width:200px;width:30vw;max-width:370px;padding:10px;">
+      {% if skillset %}
+        {% for skill in skillset %}
+        {% if skill.type == 'language' %}
+       
+          <div class="stack-card " aria-label="{{skill.name}}">
+             <div class="skill-logo"> {{skill.logo|safe}}
+           </div>
+          <div class="card-body">
+            <span class="stack-name" >{{skill.name}}</span><br>
+            <span  class="stack-proficiency"aria-label="stack-proficiency">{{skill.proficiency}}</span><br>
+            <span  class="stack-proficiency-score"aria-label="stack-proficiency">Score:{{skill.score}}/100</span>
+           </div>
+         </div>
+        {% endif %} 
+        {% endfor %}
+      {% endif %}
+
+        <!--<div class="cards-toggle">
+          <button class="cards-toggle-button">
+            <svg height="25px"viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#5C469C">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+
+              </g><g id="SVGRepo_iconCarrier">
+                <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#5C469C"></path></g></svg>
+          </button>
+         
+         
+          <button class="cards-toggle-button">
+            <svg height="25px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#5C469C"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g
+                ><g id="SVGRepo_iconCarrier">
+                  <path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#5C469C"></path></g></svg>
+          </button>
+        
+        </div>
+        -->   
+        
+      </div>
+      </div> 
+    </div>
+    
+      <div class="myinfo-box theme-common pop-translate" style="width:fit-content; ">
+        <div class="slide-out" style="flex-wrap:wrap;"
+        >
+          <span style="color:#0C134F;font-size:clamp(32px,5vw,4em);" class="bold-heading ">Web dev.<br>
+        </span></div>
+         
+        <div class="card-container"style="min-width:200px;width:30vw;max-width:370px;padding:10px;">
+        {% if skillset %}
+          {% for skill in skillset %}
+          {% if skill.type == 'web' %}
+         
+            <div class="stack-card " aria-label="{{skill.name}}">
+              <div class="skill-logo">{{skill.logo|safe}}
+              </div>
+            <div class="card-body">
+              <span class="stack-name" >{{skill.name}}</span><br>
+              <span  class="stack-proficiency"aria-label="stack-proficiency">{{skill.proficiency}}</span><br>
+              <span  class="stack-proficiency-score"aria-label="stack-proficiency">Score:{{skill.score}}/100</span>
+             </div>
+           </div>
+          {% endif %} 
+          {% endfor %}
+        {% endif %}
+          
+          
+        </div>
+  
+        </div> 
+
+
+      <div class="myinfo-box theme-common pop-translate" style="width:100vw;background-color: #5C469C;flex-direction: column; ">
+        <div class="slide-out" style="flex-wrap:wrap;">
+          <span style="color:white;font-size:clamp(32px,5vw,4em);" class="bold-heading ">Tech Stack?</span>
+        </div>
+        
+      <div class="card-container"style="min-width:200px;width:fit-content;flex-direction:row;padding:10px;">
+         {% if skillset %}
+          {% for skill in skillset %}
+          {% if skill.type == 'stack' %}
+         
+          <div class="stack-card " aria-label="{{skill.name}}">
+           <div class="skill-logo" style="width:100px;height: 100px;"> {{skill.logo|safe}} </div>
+            <div class="card-body"></div>
+              <span class="stack-name" style="color:white" >{{skill.name}}</span>
+              <span  class="stack-proficiency"aria-label="stack-proficiency">{{skill.proficiency}}</span><br>
+              <span  class="stack-proficiency-score"aria-label="stack-proficiency">Score:{{skill.score}}/100</span>
+            </div>
+             
+          {% endif %} 
+          {% endfor %}
+          
+         {% endif %}
+       
+        
+        </div>
+      </div>
+         
+
+
+        <div aria-label="container" style="display:flex;justify-content:flex-end;height:fit-content;width:100vw;">
+          <div class="myinfo-box theme-common pop-translate" style="width:fit-content; ">
+            <div class="slide-out" style="flex-wrap:wrap;"
+            >
+              <span style="color:#0C134F;font-size:clamp(32px,5vw,4em);" class="bold-heading ">Toolkit>
+            </span></div>
+             
+            <div class="card-container"style="min-width:200px;width:30vw;max-width:370px;padding:10px;">
+            {% if skillset %}
+              {% for skill in skillset %}
+              {% if skill.type == 'tool' %}
+             
+                <div class="stack-card " aria-label="{{skill.name}}">
+                   <div class="skill-logo"> {{skill.logo|safe}}
+                 </div>
+                <div class="card-body">
+                  <span class="stack-name" >{{skill.name}}</span><br>
+                  <span  class="stack-proficiency"aria-label="stack-proficiency">{{skill.proficiency}}</span><br>
+                  <span  class="stack-proficiency-score"aria-label="stack-proficiency">Score:{{skill.score}}/100</span>
+                 </div>
+               </div>
+              {% endif %} 
+              {% endfor %}
+            {% endif %}
+              
+              
+            </div>
+      
+            </div> </div>
+    
+    
+    <div class="my-projects theme-common" style="background-color: #5C469C;">
+      <p class="bold-heading"style="animation:appear 2s">Projects</p>
+     
+    <div class="project-container">
+      {%for project in projects%}
+        <div class="project-item">
+         
+        <div class="flex-center" style="flex-direction: column;" aria-label="project">
+          {% with project.image|concat as name  %}
+            <img height=30px alt="Unable To Load Image"width='30px' src="{%static name %}" class="project-image"></img>
+          {% endwith %} 
+            <span style="padding:7px;font-size:clamp(20px,5vw,30px)">{{project.name}}</span>
+            <a class="hidden project-link">{{project.link}}</a>
+        </div>     
+       </div>
+      {%endfor%}
+
+      </div> 
+     </div>   
+      
+     <div aria-label="container" style="display:flex;justify-content:flex-end;height:fit-content;width:100vw;">
+        <div class="myinfo-box theme-common pop-translate" style="width:fit-content; ">
+          <div class="slide-out" >
+            <span style="color:#0C134F;font-size:clamp(60%,10vw,4em);" class="bold-heading ">Links
+          </span></div>
+          <p class="links-container flex-center">
+            <a class="btn-secondary" href="">RESUME  </a>
+            <a class="btn-secondary" href="">LEETCODE</a>
+            <a class="btn-secondary" href="">GITHUB  </a>
+            <a class="btn-secondary" href="">WORK    </a>
+            <a class="btn-secondary" href="">CONTACT </a>
+          </p>
+      </div> 
+     
+    </div>    
+
+    <div class="theme-common " style="flex-direction:column;width:fit-content">
+      <p class="bold-heading">Social:</p>
+     <div id="LeaveMessage">
+      <button  style="width:fit-content;padding:20px;clip-path:polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      flex-direction:column;background-color:#B70404;height:fit-content; ">
+        <span style="color:#0C134F;white-space:nowrap;font-size:clamp(60%,4vw,2.5em);" class="bold-heading ">Leave a Message
+        </span>
+      </button>
+      {% include 'snippets/message-form.html' %}
+      </div>
+    </div>
+    
+    <script src="{%static 'js/home.js'%}"></script>
+    {%endblock %}
